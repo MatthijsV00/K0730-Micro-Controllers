@@ -1,0 +1,17 @@
+#include <Servo.h>
+
+Servo myservo;  
+
+int potpin = 0; //hier staat de slider mee verbonden
+int val;    
+
+void setup() {
+  myservo.attach(9);  // hier staat de servo mee verbonden
+}
+
+void loop() {
+  val = analogRead(potpin);       // code om het te laten werken    
+  val = map(val, 0, 1023, 0, 180);    
+  myservo.write(val);                  
+  delay(15);                           
+}
